@@ -22,6 +22,9 @@
   .title {
     font-size: 96pt;
   }
+  .social {
+    margin: auto 60px;
+  }
   .content {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 0.1fr;
@@ -29,8 +32,8 @@
       "video buy-now"
       "footer footer";
   }
-  .social {
-    margin: auto 60px;
+  .buy-now {
+    margin: 4em auto;
   }
 }
 @media (max-width: 1199px) {
@@ -44,11 +47,14 @@
       "image"
       "social";
   }
+  .header-image {
+    display: none;
+  }
   .title {
     font-size: 64pt;
   }
-  .header-image {
-    display: none;
+  .social {
+    margin: 0 auto 50px;
   }
   .content {
     grid-template-columns: 1fr;
@@ -58,8 +64,8 @@
       "video"
       "footer";
   }
-  .social {
-    margin: auto auto 20px;
+  .buy-now {
+    margin: 3em auto;
   }
 }
 html, body {
@@ -124,8 +130,6 @@ a {
 .buy-now {
   grid-area: buy-now;
   background-color: black;
-  padding: 40px;
-  margin: 4em auto;
   color: white;
   font-size: 2em;
   text-align: center;
@@ -146,5 +150,5 @@ a {
   align-content: end;
   font-size: .8em;
   color: #CCC;
-  margin: auto;
+  margin: 1em auto;
 }

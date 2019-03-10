@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?nfn9p9');
-  src:  url('fonts/icomoon.eot?nfn9p9#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?nfn9p9') format('truetype'),
-    url('fonts/icomoon.woff?nfn9p9') format('woff'),
-    url('fonts/icomoon.svg?nfn9p9#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?fqsdb4');
+  src:  url('fonts/icomoon.eot?fqsdb4#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?fqsdb4') format('truetype'),
+    url('fonts/icomoon.woff?fqsdb4') format('woff'),
+    url('fonts/icomoon.svg?fqsdb4#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -24,6 +24,27 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-twitter:before {
+  content: "\e901";
+}
+.icon-facebook-f:before {
+  content: "\e902";
+}
+.icon-youtube:before {
+  content: "\e903";
+}
+.icon-google-play:before {
+  content: "\e904";
+}
 .icon-pandora:before {
   content: "\e900";
+}
+.icon-amazon:before {
+  content: "\ea87";
+}
+.icon-spotify:before {
+  content: "\ea94";
+}
+.icon-appleinc:before {
+  content: "\eabe";
 }
