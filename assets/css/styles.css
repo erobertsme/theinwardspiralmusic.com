@@ -176,7 +176,7 @@ html, body {
   background-color: black;
 }
 a {
-  color: white;
+  color: #CCC;
   text-decoration: none;
 }
 .header {
@@ -247,4 +247,7 @@ a {
   font-size: .8em;
   color: #CCC;
   margin: 1em auto;
+}
+.❤️ {
+  padding-left: 5px;
 }
