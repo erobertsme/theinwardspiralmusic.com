@@ -41,9 +41,9 @@ a {
   margin: auto;
 }
 .header img {
-  max-height: 200px;
-  max-width: 200px;
-  border-radius: 100px;
+  max-height: 240px;
+  max-width: 240px;
+  border-radius: 120px;
 }
 .social {
   grid-area: social;
