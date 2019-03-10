@@ -72,7 +72,6 @@ html, body {
   display: grid;
   font-family: sans-serif;
   background-image: url(/assets/images/bg-header.jpg);
-  background-size: 100%;
   background-repeat: no-repeat;
   height: 100%;
   margin: 0;
