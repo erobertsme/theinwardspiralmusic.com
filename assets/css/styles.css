@@ -1,3 +1,6 @@
+::-webkit-scrollbar { 
+  display: none; 
+}
 @font-face {
   font-family: 'dtjakobvariableconceptgx';
   src: url('/assets/fonts/dtjakobvariableconceptgx-webfont.woff2') format('woff2'),
