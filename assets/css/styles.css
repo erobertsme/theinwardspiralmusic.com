@@ -1,6 +1,9 @@
 ::-webkit-scrollbar { 
   display: none; 
 }
+@-ms-viewport {
+  width: device-width;
+}
 @font-face {
   font-family: 'dtjakobvariableconceptgx';
   src: url('/assets/fonts/dtjakobvariableconceptgx-webfont.woff2') format('woff2'),
@@ -8,7 +11,19 @@
   font-weight: normal;
   font-style: normal;
 }
-@media (min-width: 1200px) {
+/* For extra large screens */
+@media (min-width: 1921px), (min-height: 1200px) {
+  html, body {
+    background-size: 100%;
+  }
+  .content {
+    padding: 7vh;
+    background-size: 100%;
+  }
+}
+/* For Large Screens */
+/* --------------------------------- */
+@media (min-width: 1281px) {
   html, body {
     grid-template-rows: 1.1fr 1fr;
   }
@@ -18,6 +33,9 @@
     grid-template-areas: 
       "image title"
       ". social";
+  }
+  .header-image {
+    margin: auto;
   }
   .title {
     font-size: 96pt;
@@ -36,7 +54,46 @@
     margin: 4em auto;
   }
 }
-@media (max-width: 1199px) {
+/* In between */
+@media (max-width: 1320px) {
+  .header-image {
+    margin: auto auto auto 5vh;
+  }
+}
+@media (max-width: 1280px) {
+  html, body {
+    grid-template-rows: 1.1fr 1fr;
+  }
+  .header {
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 1fr .2fr;
+    grid-template-areas: 
+      "image title"
+      ". social";
+  }
+  .header-image {
+    margin: auto;
+  }
+  .title {
+    font-size: 96pt;
+  }
+  .social {
+    margin: auto 60px;
+  }
+  .content {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 0.1fr;
+    grid-template-areas:
+      "video buy-now"
+      "footer footer";
+    }
+  .buy-now {
+    margin: 4em auto;
+  }
+}
+/* For small screens */
+/* --------------------------------- */
+@media (max-width: 900px) {
   html, body {
     grid-template-rows: 1fr;
   }
@@ -46,6 +103,7 @@
     grid-template-areas: 
       "image"
       "social";
+    min-height: 3vh;
   }
   .header-image {
     display: none;
@@ -68,6 +126,39 @@
     margin: 3em auto;
   }
 }
+@media (max-width: 1147px) {
+  html, body {
+    grid-template-rows: 1fr;
+  }
+  .header {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr .2fr;
+    grid-template-areas: 
+      "image"
+      "social";
+    min-height: 3vh;
+  }
+  .title {
+    font-size: 64pt;
+  }
+  .social {
+    margin: 0 auto 50px;
+  }
+  .content {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 0.1fr;
+    grid-template-areas:
+      "buy-now"
+      "video"
+      "footer";
+  }
+  .buy-now {
+    margin: 3em auto;
+  }
+}
+/* For Medium Screens */
+/* --------------------------------- */
+/* --------------------------------- */
 html, body {
   display: grid;
   font-family: sans-serif;
@@ -79,6 +170,7 @@ html, body {
 }
 a {
   color: white;
+  text-decoration: none;
 }
 .header {
   display: grid;
@@ -89,9 +181,7 @@ a {
   margin: auto 0;
   padding-bottom: 30px;
   color: #666;
-}
-.header-image {
-  margin: auto;
+  text-shadow: -1px 0 #AAA, 0 1px #AAA, 1px 0 #AAA, 0 -1px #AAA;
 }
 .header img {
   max-height: 240px;
