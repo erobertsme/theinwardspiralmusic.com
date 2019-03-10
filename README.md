@@ -1,26 +1,2 @@
 # The Inward Spiral
-https://theinwardspiralmusic.com
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
----
-permalink: /index.html
----
+## [https://theinwardspiralmusic.com](https://theinwardspiralmusic.com)
