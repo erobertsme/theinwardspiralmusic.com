@@ -19,6 +19,9 @@
       "image title"
       ". social";
   }
+  .title {
+    font-size: 96pt;
+  }
   .content {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 0.1fr;
@@ -38,9 +41,14 @@
     grid-template-columns: 1fr;
     grid-template-rows: 1fr .2fr;
     grid-template-areas: 
-      "title"
       "image"
       "social";
+  }
+  .title {
+    font-size: 64pt;
+  }
+  .header-image {
+    display: none;
   }
   .content {
     grid-template-columns: 1fr;
@@ -51,7 +59,7 @@
       "footer";
   }
   .social {
-    margin: auto;
+    margin: auto auto 20px;
   }
 }
 html, body {
@@ -72,7 +80,6 @@ a {
 }
 .title {
   font-family: 'dtjakobvariableconceptgx';
-  font-size: 8em;
   text-align: center;
   margin: auto 0;
   padding-bottom: 30px;
