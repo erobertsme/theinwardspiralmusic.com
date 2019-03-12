@@ -219,10 +219,29 @@ a {
 }
 .video {
   grid-area: video;
-}
-.video, iframe {
+  display: flex;
   margin: auto;
+  max-height: 338px;
+  max-width: 600px;
 }
+/* Code provided by: https://hellbach.us/blog/tech/dev/efficient-method-embedding-youtube-videos/  */
+.youtube-player { 
+  min-height: 338px;
+  min-width: 600px;
+  cursor: pointer; 
+}
+.youtube-thumb {
+  display: flex;
+  min-height: 338px;
+  min-width: 600px;
+  }
+.youtube-thumb .fa-play { 
+  height: 72px; 
+  width: 72px; 
+  margin: auto;
+  color: white;
+}
+/* ------------- */
 .buy-now {
   grid-area: buy-now;
   background-color: black;
