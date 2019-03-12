@@ -7,7 +7,7 @@ youTubeDiv.addEventListener('click', function(event){
   console.log("Click!")
 })
 
-// The below code was provided from: https://hellbach.us/blog/tech/dev/efficient-method-embedding-youtube-videos/
+// The below code was partially provided from: https://hellbach.us/blog/tech/dev/efficient-method-embedding-youtube-videos/
 function addThumb(item) { 
   item.innerHTML = `<a class="youtube-thumb embed-link" style="background-image: url('https://i.ytimg.com/vi/${item.dataset.id}/maxresdefault.jpg')"><i class="fab fa-youtube embed-link"></i></a>`;
 }
