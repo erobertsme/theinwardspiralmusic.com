@@ -235,11 +235,18 @@ a {
   min-height: 338px;
   min-width: 600px;
   }
-.youtube-thumb .fa-play { 
-  height: 72px; 
-  width: 72px; 
+.youtube-thumb .fa-youtube { 
+  font-size: 48pt;
   margin: auto;
-  color: white;
+}
+/* .video > .youtube-player > a > .youtube-thumb > i.fab.fa-youtube */
+a.embed-link i {
+  color: black;
+  opacity: 0.6;
+  transition: color 80ms ease-in-out;
+}
+a.embed-link:hover i {
+  color: red;
 }
 /* ------------- */
 .buy-now {

@@ -9,7 +9,7 @@ youTubeDiv.addEventListener('click', function(event){
 
 // The below code was provided from: https://hellbach.us/blog/tech/dev/efficient-method-embedding-youtube-videos/
 function addThumb(item) { 
-  item.innerHTML = `<div class="youtube-thumb" style="background-image: url('https://i.ytimg.com/vi/${item.dataset.id}/maxresdefault.jpg')"><i class="fas fa-play fa-3x"></i></div>`;
+  item.innerHTML = `<a class="youtube-thumb embed-link" style="background-image: url('https://i.ytimg.com/vi/${item.dataset.id}/maxresdefault.jpg')"><i class="fab fa-youtube embed-link"></i></a>`;
 }
 
 function addIframe(item) {
