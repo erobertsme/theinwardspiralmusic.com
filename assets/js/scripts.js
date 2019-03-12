@@ -1,6 +1,78 @@
-const youTubeDiv = document.querySelector(".youtube-player");
+getData()
 
-addThumb(youTubeDiv)
+let lastIndex
+let currentIndex = 0
+let videos = []
+function getData() {
+  let request = new XMLHttpRequest();
+  request.addEventListener('readystatechange', () => {
+    if (request.readyState === 4) {
+
+      let response = request.responseText;
+      response = response.split('\n')
+      
+      for (let i = 0; i < response.length; i++) {
+        const line = response[i]
+        videos.push(line)
+      }
+      setFirstVideo()
+      setLastIndex()
+    }
+  });
+  request.open('GET', '/assets/js/videos.txt', true);
+  request.send()
+}
+
+function setFirstVideo(){
+  let video = videos[currentIndex]
+  let videoArr = video.split('v=')
+  let videoId = videoArr[1]
+
+  currentIndex = 1
+
+  youTubeDiv.setAttribute("data-id", videoId)
+  addThumb(youTubeDiv)
+}
+
+function setLastIndex(){
+  if (lastIndex === undefined && videos.length > 0) {
+    lastIndex = videos.length -1
+  }
+}
+
+const nextVideo = document.getElementById("next")
+nextVideo.addEventListener('click', function(){
+  let video = videos[currentIndex]
+  let videoArr = video.split('v=')
+  let videoId = videoArr[1]
+  
+  if (currentIndex < lastIndex) {
+    currentIndex += 1
+  } else {
+    currentIndex = 0
+  }
+  
+  youTubeDiv.setAttribute("data-id", videoId)
+  addThumb(youTubeDiv)
+})
+
+const prevVideo = document.getElementById("prev")
+prevVideo.addEventListener('click', function(){
+  let video = videos[currentIndex]
+  let videoArr = video.split('v=')
+  let videoId = videoArr[1]
+  
+  if (currentIndex > 0) {
+    currentIndex -= 1
+  } else {
+    currentIndex = lastIndex
+  }
+  
+  youTubeDiv.setAttribute("data-id", videoId)
+  addThumb(youTubeDiv)
+})
+
+const youTubeDiv = document.querySelector(".youtube-player");
 
 youTubeDiv.addEventListener('click', function(event){
   addIframe(this)
@@ -23,71 +95,3 @@ function addIframe(item) {
   item.appendChild(iframe);
 }
 // -------------------------------------
-
-let lastIndex
-let videos = []
-function getData() {
-  let request = new XMLHttpRequest();
-  request.addEventListener('readystatechange', () => {
-    if (request.readyState === 4) {
-
-      let response = request.responseText;
-      response = response.split('\n')
-
-      for (let i = 0; i < response.length; i++) {
-        const line = response[i]
-        videos.push(line)
-      }
-
-      setLastIndex()
-    }
-  });
-  request.open('GET', '/assets/js/videos.txt', true);
-  request.send()
-}
-getData()
-
-function setLastIndex(){
-  console.log("Is this being run?")
-  if (lastIndex === undefined && videos.length > 0) {
-    lastIndex = videos.length -1
-    console.log("Setting last index")
-  }
-}
-let currentIndex = 0
-
-const nextVideo = document.getElementById("next")
-nextVideo.addEventListener('click', function(){
-  let video = videos[currentIndex]
-  let videoArr = video.split('v=')
-  let videoId = videoArr[1]
-
-  if (currentIndex < lastIndex) {
-    currentIndex += 1
-  } else {
-    currentIndex = 0
-  }
-
-  youTubeDiv.setAttribute("data-id", videoId)
-  addThumb(youTubeDiv)
-  console.log(videoId)
-  console.log(currentIndex)
-})
-
-const prevVideo = document.getElementById("prev")
-prevVideo.addEventListener('click', function(){
-  let video = videos[currentIndex]
-  let videoArr = video.split('v=')
-  let videoId = videoArr[1]
-
-  if (currentIndex > 0) {
-    currentIndex -= 1
-  } else {
-    currentIndex = lastIndex
-  }
-
-  youTubeDiv.setAttribute("data-id", videoId)
-  addThumb(youTubeDiv)
-  console.log(videoId)
-  console.log(currentIndex)
-})
