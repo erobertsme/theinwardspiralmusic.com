@@ -200,6 +200,7 @@ a:hover {
 }
 .social {
   grid-area: social;
+  display: flex;
   justify-self: right;
 }
 .social .social-icon {
@@ -208,15 +209,14 @@ a:hover {
   border-radius: 100px;
   width: 60px;
   height: 60px;
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
   margin: 6px;
 }
 .social-icon:hover {
   color: white;
-}
-.social-icon i {
-  margin-top: 14px;
 }
 .content {
   display: grid;
@@ -226,12 +226,15 @@ a:hover {
 .video {
   grid-area: video;
   display: flex;
+  justify-content: center;
   margin: auto;
   max-height: 338px;
   max-width: 600px;
 }
 /* Code provided by: https://hellbach.us/blog/tech/dev/efficient-method-embedding-youtube-videos/  */
 .youtube-player { 
+  align-self: center;
+  justify-self: center;
   min-height: 338px;
   min-width: 600px;
   cursor: pointer; 
@@ -239,7 +242,6 @@ a:hover {
 .youtube-thumb {
   display: flex;
   min-height: 338px;
-  min-width: 600px;
   }
 .youtube-thumb .fa-youtube { 
   font-size: 48pt;
