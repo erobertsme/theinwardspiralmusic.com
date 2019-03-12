@@ -226,6 +226,7 @@ a:hover {
 .video {
   grid-area: video;
   display: flex;
+  align-items: center;
   justify-content: center;
   margin: auto;
   max-height: 338px;
@@ -255,6 +256,12 @@ a.embed-link i {
 }
 a.embed-link:hover i {
   color: red;
+  opacity: 1;
+}
+#prev, #next {
+  display: inline-flex;
+  color: white;
+  font-size: 48pt;
 }
 /* ------------- */
 .buy-now {
