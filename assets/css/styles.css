@@ -179,6 +179,9 @@ a {
   color: #CCC;
   text-decoration: none;
 }
+a:hover {
+  color: #FFF;
+}
 .header {
   display: grid;
 }
@@ -201,13 +204,16 @@ a {
 }
 .social .social-icon {
   background-color: black;
-  color: white;
+  color: #CCC;
   border-radius: 100px;
   width: 60px;
   height: 60px;
   display: inline-block;
   text-align: center;
   margin: 6px;
+}
+.social-icon:hover {
+  color: white;
 }
 .social-icon i {
   margin-top: 14px;
@@ -252,7 +258,7 @@ a.embed-link:hover i {
 .buy-now {
   grid-area: buy-now;
   background-color: black;
-  color: white;
+  color: #CCC;
   font-size: 2em;
   text-align: center;
 }
@@ -264,6 +270,7 @@ a.embed-link:hover i {
   font-size: 36pt;
 }
 .album {
+  color: white;
   font-weight: bolder;
   font-size: 2em;
 }

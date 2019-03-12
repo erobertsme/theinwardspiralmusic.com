@@ -14,7 +14,7 @@ function addThumb(item) {
 
 function addIframe(item) {
   let iframe = document.createElement("iframe");
-iframe.setAttribute("src", `https://www.youtube.com/embed/${item.dataset.id}?autoplay=1&autohide=1&rel=0`);
+iframe.setAttribute("src", `https://www.youtube.com/embed/${item.dataset.id}?autoplay=1&autohide=1&rel=0&enablejsapi=1&playsinline=1`);
   iframe.setAttribute("frameborder", "0");
   iframe.setAttribute("allow", "accelerometer; encrypted-media; gyroscope; picture-in-picture");
   iframe.setAttribute("height", "338");
