@@ -1,8 +1,10 @@
 getData()
 
+const youTubeDiv = document.querySelector(".youtube-player");
 let lastIndex
 let currentIndex = 0
 let videos = []
+
 function getData() {
   let request = new XMLHttpRequest();
   request.addEventListener('readystatechange', () => {
@@ -23,7 +25,7 @@ function getData() {
   request.send()
 }
 
-function setFirstVideo(){
+function setFirstVideo() {
   let video = videos[currentIndex]
   let videoArr = video.split('v=')
   let videoId = videoArr[1]
@@ -34,14 +36,14 @@ function setFirstVideo(){
   addThumb(youTubeDiv)
 }
 
-function setLastIndex(){
+function setLastIndex() {
   if (lastIndex === undefined && videos.length > 0) {
     lastIndex = videos.length -1
   }
 }
 
 const nextVideo = document.getElementById("next")
-nextVideo.addEventListener('click', function(){
+nextVideo.addEventListener('click', function() {
   let video = videos[currentIndex]
   let videoArr = video.split('v=')
   let videoId = videoArr[1]
@@ -57,7 +59,7 @@ nextVideo.addEventListener('click', function(){
 })
 
 const prevVideo = document.getElementById("prev")
-prevVideo.addEventListener('click', function(){
+prevVideo.addEventListener('click', function() {
   let video = videos[currentIndex]
   let videoArr = video.split('v=')
   let videoId = videoArr[1]
@@ -72,9 +74,7 @@ prevVideo.addEventListener('click', function(){
   addThumb(youTubeDiv)
 })
 
-const youTubeDiv = document.querySelector(".youtube-player");
-
-youTubeDiv.addEventListener('click', function(event){
+youTubeDiv.addEventListener('click', function(event) {
   addIframe(this)
 })
 
@@ -94,4 +94,3 @@ function addIframe(item) {
   item.innerHTML = ""
   item.appendChild(iframe);
 }
-// -------------------------------------
