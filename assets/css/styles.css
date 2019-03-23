@@ -84,6 +84,7 @@ a:hover {
 .youtube-thumb {
   display: flex;
   min-height: 338px;
+  background-size: 600px 338px;
   }
 .youtube-thumb .fa-youtube { 
   font-size: 48pt;
