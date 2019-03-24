@@ -70,8 +70,6 @@ a:hover {
   align-items: center;
   justify-content: center;
   margin: auto;
-  max-height: 338px;
-  max-width: 600px;
 }
 /* Code partially provided by: https://hellbach.us/blog/tech/dev/efficient-method-embedding-youtube-videos/  */
 .youtube-player { 
@@ -294,10 +292,16 @@ a.embed-link:hover i {
   .buy-now {
     margin: 3em auto;
   }
-  #prev, #prev:first-child {
-    display: none;
+}
+@media (max-width: 600px) {
+  .content {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 0.1fr;
+    grid-template-areas:
+      "buy-now"
+      "footer";
   }
-  #next, #next:first-child {
+  .video {
     display: none;
   }
 }
