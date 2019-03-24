@@ -24,7 +24,7 @@ a:hover {
   font-family: 'dtjakobvariableconceptgx';
   text-align: center;
   line-height: 1.2;
-  color: #666;
+  color: #333;
   text-shadow: -1px 0 #AAA, 0 1px #AAA, 1px 0 #AAA, 0 -1px #AAA;
 }
 .header img {
