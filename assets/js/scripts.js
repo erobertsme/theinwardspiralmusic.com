@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', main())
 
-const youTubeDiv = document.querySelector(".youtube-player")
-const nextVideo = document.getElementById("next")
-const prevVideo = document.getElementById("prev")
+const youTubeDiv = document.querySelector('.youtube-player')
+const nextVideo = document.getElementById('next')
+const prevVideo = document.getElementById('prev')
 
 let lastIndex
 let currentIndex = 0
@@ -38,8 +38,8 @@ async function addVideos() {
 
   for (let i = 0; i < data.length; i++) {
     let line = data[i]
-    
-    if (line !== "") {
+
+    if (line !== '') {
       let video = line.split('v=')
       videos.push(video[1])
     }
@@ -83,13 +83,13 @@ function addThumb() {
 }
 
 function addIframe() {
-  let iframe = document.createElement("iframe")
+  let iframe = document.createElement('iframe')
   iframe.src = `https://www.youtube.com/embed/${getVideo()}?autoplay=1&autohide=1&rel=0&enablejsapi=1&playsinline=1`
-  iframe.setAttribute("frameborder", "0")
-  iframe.setAttribute("allow", "accelerometer; encrypted-media; gyroscope; picture-in-picture")
-  iframe.height = "338"
-  iframe.width = "600"
-  iframe.setAttribute("allowfullscreen", "")
+  iframe.setAttribute('frameborder', '0')
+  iframe.setAttribute('allow', 'accelerometer; encrypted-media; gyroscope; picture-in-picture')
+  iframe.height = '338'
+  iframe.width = '600'
+  iframe.setAttribute('allowfullscreen', '')
 
   while (youTubeDiv.firstChild) {
     youTubeDiv.firstChild.remove()
