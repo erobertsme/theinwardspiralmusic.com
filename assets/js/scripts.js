@@ -38,6 +38,7 @@ async function addVideos() {
 
   for (let i = 0; i < data.length; i++) {
     let line = data[i]
+    
     if (line !== "") {
       let video = line.split('v=')
       videos.push(video[1])
@@ -82,10 +83,10 @@ function addThumb() {
 }
 
 function addIframe() {
-  let iframe = document.createElement("iframe");
-  iframe.src = `https://www.youtube.com/embed/${getVideo()}?autoplay=1&autohide=1&rel=0&enablejsapi=1&playsinline=1`;
-  iframe.setAttribute("frameborder", "0");
-  iframe.setAttribute("allow", "accelerometer; encrypted-media; gyroscope; picture-in-picture");
+  let iframe = document.createElement("iframe")
+  iframe.src = `https://www.youtube.com/embed/${getVideo()}?autoplay=1&autohide=1&rel=0&enablejsapi=1&playsinline=1`
+  iframe.setAttribute("frameborder", "0")
+  iframe.setAttribute("allow", "accelerometer; encrypted-media; gyroscope; picture-in-picture")
   iframe.height = "338"
   iframe.width = "600"
   iframe.setAttribute("allowfullscreen", "")
@@ -94,5 +95,5 @@ function addIframe() {
     youTubeDiv.firstChild.remove()
   }
 
-  youTubeDiv.appendChild(iframe);
+  youTubeDiv.appendChild(iframe)
 }
