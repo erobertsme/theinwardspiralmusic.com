@@ -1,96 +1,98 @@
-getData()
+document.addEventListener('DOMContentLoaded', main())
 
-const youTubeDiv = document.querySelector(".youtube-player");
+const youTubeDiv = document.querySelector(".youtube-player")
+const nextVideo = document.getElementById("next")
+const prevVideo = document.getElementById("prev")
+
 let lastIndex
 let currentIndex = 0
 let videos = []
 
-function getData() {
-  let request = new XMLHttpRequest();
-  request.addEventListener('readystatechange', () => {
-    if (request.readyState === 4) {
-
-      let response = request.responseText;
-      response = response.split('\n')
-      
-      for (let i = 0; i < response.length; i++) {
-        const line = response[i]
-        videos.push(line)
-      }
-      setFirstVideo()
-      setLastIndex()
-    }
-  });
-  request.open('GET', '/assets/js/videos.txt', true);
-  request.send()
-}
-
-function setFirstVideo() {
-  let video = videos[currentIndex]
-  let videoArr = video.split('v=')
-  let videoId = videoArr[1]
-
-  currentIndex = 1
-
-  youTubeDiv.setAttribute("data-id", videoId)
-  addThumb(youTubeDiv)
-}
-
-function setLastIndex() {
-  if (lastIndex === undefined && videos.length > 0) {
-    lastIndex = videos.length -1
-  }
-}
-
-const nextVideo = document.getElementById("next")
-nextVideo.addEventListener('click', function() {
-  let video = videos[currentIndex]
-  let videoArr = video.split('v=')
-  let videoId = videoArr[1]
-  
-  if (currentIndex < lastIndex) {
-    currentIndex += 1
-  } else {
-    currentIndex = 0
-  }
-  
-  youTubeDiv.setAttribute("data-id", videoId)
-  addThumb(youTubeDiv)
+youTubeDiv.addEventListener('click', () => {
+  addIframe()
 })
 
-const prevVideo = document.getElementById("prev")
-prevVideo.addEventListener('click', function() {
-  let video = videos[currentIndex]
-  let videoArr = video.split('v=')
-  let videoId = videoArr[1]
-  
+nextVideo.addEventListener('click', () => {
+  next()
+  addThumb(getVideo())
+})
+
+prevVideo.addEventListener('click', () => {
+  prev()
+  addThumb(getVideo())
+})
+
+async function main() {
+  await addVideos()
+  addThumb()
+  lastIndex = videos.length -1
+}
+
+function getData() {
+  return fetch('/assets/js/videos.txt').then(results => results.text())
+}
+
+async function addVideos() {
+  let data = await getData()
+  data = data.split('\n')
+
+  for (let i = 0; i < data.length; i++) {
+    let line = data[i]
+    if (line !== "") {
+      let video = line.split('v=')
+      videos.push(video[1])
+    }
+  }
+}
+
+function prev() {
   if (currentIndex > 0) {
-    currentIndex -= 1
+    currentIndex --
   } else {
     currentIndex = lastIndex
   }
-  
-  youTubeDiv.setAttribute("data-id", videoId)
-  addThumb(youTubeDiv)
-})
-
-youTubeDiv.addEventListener('click', function(event) {
-  addIframe(this)
-})
-
-// The below code was partially provided from: https://hellbach.us/blog/tech/dev/efficient-method-embedding-youtube-videos/
-function addThumb(item) { 
-  item.innerHTML = `<a class="youtube-thumb embed-link" style="background-image: url('https://i.ytimg.com/vi/${item.dataset.id}/maxresdefault.jpg')"><i class="fab fa-youtube embed-link"></i></a>`;
 }
 
-function addIframe(item) {
+function next() {
+  if (currentIndex < lastIndex) {
+    currentIndex ++
+  } else {
+    currentIndex = 0
+  }
+}
+
+function getVideo() {
+  return videos[currentIndex]
+}
+
+function addThumb() { 
+  let a = document.createElement('a')
+  a.setAttribute('class', 'youtube-thumb embed-link' )
+  a.style.backgroundImage = `url('https://i.ytimg.com/vi/${getVideo()}/maxresdefault.jpg')`
+
+  let icon = document.createElement('i')
+  icon.setAttribute('class', 'fab fa-youtube embed-link')
+
+  a.appendChild(icon)
+
+  while (youTubeDiv.firstChild) {
+    youTubeDiv.firstChild.remove()
+  }
+  youTubeDiv.appendChild(a)
+}
+
+function addIframe() {
   let iframe = document.createElement("iframe");
-  iframe.setAttribute("src", `https://www.youtube.com/embed/${item.dataset.id}?autoplay=1&autohide=1&rel=0&enablejsapi=1&playsinline=1`);
+  iframe.src = `https://www.youtube.com/embed/${getVideo()}?autoplay=1&autohide=1&rel=0&enablejsapi=1&playsinline=1`;
   iframe.setAttribute("frameborder", "0");
   iframe.setAttribute("allow", "accelerometer; encrypted-media; gyroscope; picture-in-picture");
-  iframe.setAttribute("height", "338");
-  iframe.setAttribute("width", "600");
+  iframe.height = "338"
+  iframe.width = "600"
   iframe.setAttribute("allowfullscreen", "")
-  item.innerHTML = ""
-  item.appendChild(iframe);
+
+  while (youTubeDiv.firstChild) {
+    youTubeDiv.firstChild.remove()
+  }
+
+  youTubeDiv.appendChild(iframe);
 }

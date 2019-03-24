@@ -73,7 +73,7 @@ a:hover {
   max-height: 338px;
   max-width: 600px;
 }
-/* Code provided by: https://hellbach.us/blog/tech/dev/efficient-method-embedding-youtube-videos/  */
+/* Code partially provided by: https://hellbach.us/blog/tech/dev/efficient-method-embedding-youtube-videos/  */
 .youtube-player { 
   align-self: center;
   justify-self: center;
@@ -89,6 +89,7 @@ a:hover {
 .youtube-thumb .fa-youtube { 
   font-size: 48pt;
   margin: auto;
+  text-shadow: 0 0 4px #666;
 }
 /* .video > .youtube-player > a > .youtube-thumb > i.fab.fa-youtube */
 a.embed-link i {
@@ -105,7 +106,7 @@ a.embed-link:hover i {
   color: #CCC;
   font-size: 48pt;
   margin: 0 1vw;
-  display: none;
+  /* display: none; */
 }
 #prev:hover, #next:hover {
   color: white;
