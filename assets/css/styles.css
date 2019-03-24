@@ -150,8 +150,7 @@ a.embed-link:hover i {
   font-family: 'dtjakobvariableconceptgx';
   src: url('/assets/fonts/dtjakobvariableconceptgx-webfont.woff2') format('woff2'),
        url('/assets/fonts/dtjakobvariableconceptgx-webfont.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
+  font-display: auto;
 }
 /* ----------------------------------------------------- */
 /* For extra large screens */
