@@ -404,7 +404,9 @@ $duration: 1000;
 
 .cake {
   position: absolute;
-  left: 50vw;
+  left: 0;
+  top: 0;
+  padding: 4px;
   float: left;
   z-index: 100;
   color: orange;
