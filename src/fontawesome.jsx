@@ -1,4 +1,4 @@
-import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons'
+import { faAngleLeft, faAngleRight, faBirthdayCake } from '@fortawesome/free-solid-svg-icons'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faYoutube, faFacebookF, faTwitter, faInstagram, faApple, faGooglePlay, faSpotify, faAmazon, faSoundcloud } from '@fortawesome/free-brands-svg-icons'
 
@@ -13,5 +13,6 @@ library.add(
   faAmazon,
   faSoundcloud,
   faAngleLeft,
-  faAngleRight
+  faAngleRight,
+  faBirthdayCake
 )
