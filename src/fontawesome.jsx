@@ -14,5 +14,4 @@ library.add(
   faSoundcloud,
   faAngleLeft,
   faAngleRight,
-  faBirthdayCake
 )

@@ -15,32 +15,13 @@ const outputSocials = () => {
   ))
 }
 
-const createConfetti = () => {
-  let confetti = document.createElement('div')
-  confetti.classList.add('confetti-piece')
-  return confetti
-}
-
-const generateConfetti = () => {
-  const birthday = document.getElementById('birthday')
-  
-  for (let i = 0; i < 100; i++) {
-    console.log(i)
-    birthday.appendChild(createConfetti())
-  }
-}
-
 const Header = () => {
   return (
-    <header className="header" id="birthday">
+    <header className="header">
 
       <div className="header-image"><img src={ HeaderImage } alt="The Inward Spiral" /></div>
 
-      <div className="title">The Inward Spiral
-        <br/><br/>
-        <div onClick={ generateConfetti }><FontAwesomeIcon className="cake" icon={[ 'fas', 'birthday-cake' ]}></FontAwesomeIcon>
-      </div>
-</div>
+      <div className="title">The Inward Spiral</div>
 
       <div className="social">
         { outputSocials() }
