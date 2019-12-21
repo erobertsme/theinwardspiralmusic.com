@@ -1,7 +1,7 @@
 html,
 body {
   font-family: sans-serif;
-  background-image: url('./assets/images/bg-header.jpg');
+  background-image: url('./assets/images/banner.png');
   background-repeat: no-repeat;
   background-color: black;
 
@@ -46,7 +46,7 @@ body {
     font-family: 'dtjakobvariableconceptgx';
     text-align: center;
     line-height: 1.2;
-    color: #333;
+    color: #3c5162;
     text-shadow: -1px 0 #AAA, 0 1px #AAA, 1px 0 #AAA, 0 -1px #AAA;
   }
 
@@ -384,4 +384,19 @@ div.embed-link:hover svg {
       display: none;
     }
   }
+}
+
+/* ----------Animations------------- */
+@keyframes slideRight {
+  100% { left: 0; }
+}
+.slide-right {
+  animation: slideRight 200ms 1 0ms ease-in-out;
+}
+
+@keyframes slideLeft {
+  100% { right: 0; }
+}
+.slide-left {
+  animation: slideLeft 200ms 1 0ms ease-in-out;
 }

@@ -6,11 +6,13 @@ export default class Video extends Component {
   state = {  
     lastIndex: videos.length -1,
     currentIndex: 0,
-    showVideo: false
-   }
+    showVideo: false,
+    classes: "youtube-thumb embed-link"
+  }
 
   prev = () => {
     this.returnToThumbnail()
+    this.slideIn('left');
     if (this.state.currentIndex > 0) {
       this.setState({ currentIndex: this.state.currentIndex - 1 })
     } else {
@@ -20,6 +22,7 @@ export default class Video extends Component {
   
   next = () => {
     this.returnToThumbnail()
+    this.slideIn('right');
     if (this.state.currentIndex < this.state.lastIndex) {
       this.setState({ currentIndex: this.state.currentIndex + 1 })
     } else {
@@ -37,13 +40,17 @@ export default class Video extends Component {
     return videos[this.state.currentIndex].split('v=')[1]
   }
 
-  handleClick = () => {
+  loadVideo = () => {
     this.setState({ showVideo: !this.state.showVideo })
+  }
+
+  slideIn = (direction) => {
+    this.setState({ classes: `youtube-thumb embed-link slide-${direction}` })
   }
   
   addThumbnail = () => {
     let style = { backgroundImage: `url('https://i.ytimg.com/vi/${this.getVideo()}/maxresdefault.jpg')` }
-    return <div className="youtube-thumb embed-link" style={ style } onClick={ this.handleClick }><FontAwesomeIcon icon={[ 'fab', 'youtube' ]} /></div>
+    return <div className={ this.state.classes } style={ style } onClick={ this.loadVideo }><FontAwesomeIcon icon={[ 'fab', 'youtube' ]} /></div>
   }
   
   addIframe = () => {
