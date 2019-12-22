@@ -1,7 +1,7 @@
 html,
 body {
   font-family: sans-serif;
-  background-image: url('./assets/images/bg-header.jpg');
+  background-image: url('./assets/images/banner.png');
   background-repeat: no-repeat;
   background-color: black;
 
@@ -43,10 +43,11 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: 'dtjakobvariableconceptgx';
+    font-family: 'dtjakobvariableconceptgx', sans-serif;
+    font-weight: 900;
     text-align: center;
     line-height: 1.2;
-    color: #333;
+    color: #222222;
     text-shadow: -1px 0 #AAA, 0 1px #AAA, 1px 0 #AAA, 0 -1px #AAA;
   }
 
@@ -93,6 +94,7 @@ body {
     min-height: 338px;
     min-width: 600px;
     cursor: pointer;
+    overflow-x: hidden;
   }
 
   .youtube-thumb {
@@ -383,5 +385,28 @@ div.embed-link:hover svg {
     .video {
       display: none;
     }
+  }
+}
+
+/* ----------Animations------------- */
+@keyframes slideRight {
+  0% { transform: translateX(600px); }
+  100% { transform: 0; }
+}
+.slide-right-appear {
+  animation: 0;
+  .slide-right-appear-active {
+    animation: slideRight 200ms 1 0ms ease-in-out;
+  }
+}
+
+@keyframes slideLeft {
+  0% { transform: translateX(-600px); }
+  100% { transform: 0; }
+}
+.slide-left-appear {
+  animation: 0;
+  .slide-left-appear-active {
+    animation: slideLeft 200ms 1 0ms ease-in-out;
   }
 }

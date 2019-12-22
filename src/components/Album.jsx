@@ -30,8 +30,8 @@ const retailers = [
 ]
 
 const outputRetailers = () => {
-  return retailers.map(retailer => (
-    <a href={ retailer.url } alt={ retailer.label } aria-label={ retailer.label }><FontAwesomeIcon icon={['fab', retailer.name ]} /></a>
+  return retailers.map((retailer, index) => (
+    <a href={ retailer.url } alt={ retailer.label } aria-label={ retailer.label } key={ index }><FontAwesomeIcon icon={['fab', retailer.name ]} /></a>
   ));
 }
 
@@ -40,8 +40,8 @@ const Album = () => {
     <div className="buy-now">
       <div className="tagline">
         New Album
-        <div className="album">Reentry</div>
-        Available on all major platforms
+        <div className="album">Strange Comfort</div>
+        Releasing on January 3rd 2020
       </div>
 
       <div className="links">
