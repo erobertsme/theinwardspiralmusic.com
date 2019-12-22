@@ -7,12 +7,10 @@ export default class Video extends Component {
     lastIndex: videos.length -1,
     currentIndex: 0,
     showVideo: false,
-    classes: "youtube-thumb embed-link"
   }
 
   prev = () => {
     this.returnToThumbnail()
-    this.slideIn('left');
     if (this.state.currentIndex > 0) {
       this.setState({ currentIndex: this.state.currentIndex - 1 })
     } else {
@@ -22,7 +20,6 @@ export default class Video extends Component {
   
   next = () => {
     this.returnToThumbnail()
-    this.slideIn('right');
     if (this.state.currentIndex < this.state.lastIndex) {
       this.setState({ currentIndex: this.state.currentIndex + 1 })
     } else {
@@ -43,14 +40,10 @@ export default class Video extends Component {
   loadVideo = () => {
     this.setState({ showVideo: !this.state.showVideo })
   }
-
-  slideIn = (direction) => {
-    this.setState({ classes: `youtube-thumb embed-link slide-${direction}` })
-  }
   
   addThumbnail = () => {
     let style = { backgroundImage: `url('https://i.ytimg.com/vi/${this.getVideo()}/maxresdefault.jpg')` }
-    return <div className={ this.state.classes } style={ style } onClick={ this.loadVideo }><FontAwesomeIcon icon={[ 'fab', 'youtube' ]} /></div>
+    return <div className="youtube-thumb embed-link" style={ style } onClick={ this.loadVideo }><FontAwesomeIcon icon={[ 'fab', 'youtube' ]} /></div>
   }
   
   addIframe = () => {
@@ -73,7 +66,7 @@ export default class Video extends Component {
       <div className="video">
         <FontAwesomeIcon icon="angle-left" id="prev" onClick={ this.prev } />
           <div className="youtube-player">{ this.state.showVideo ? this.addIframe() : this.addThumbnail() }</div>
-        <FontAwesomeIcon icon="angle-right" id="next" onClick={ this.next } />
+        <FontAwesomeIcon icon="angle-right" id="prev" onClick={ this.next } />
       </div>
     )
   }

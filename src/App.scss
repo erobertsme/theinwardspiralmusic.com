@@ -43,10 +43,11 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: 'dtjakobvariableconceptgx';
+    font-family: 'dtjakobvariableconceptgx', sans-serif;
+    font-weight: 900;
     text-align: center;
     line-height: 1.2;
-    color: #3c5162;
+    color: #222222;
     text-shadow: -1px 0 #AAA, 0 1px #AAA, 1px 0 #AAA, 0 -1px #AAA;
   }
 
@@ -93,6 +94,7 @@ body {
     min-height: 338px;
     min-width: 600px;
     cursor: pointer;
+    overflow-x: hidden;
   }
 
   .youtube-thumb {
@@ -388,15 +390,23 @@ div.embed-link:hover svg {
 
 /* ----------Animations------------- */
 @keyframes slideRight {
-  100% { left: 0; }
+  0% { transform: translateX(600px); }
+  100% { transform: 0; }
 }
-.slide-right {
-  animation: slideRight 200ms 1 0ms ease-in-out;
+.slide-right-appear {
+  animation: 0;
+  .slide-right-appear-active {
+    animation: slideRight 200ms 1 0ms ease-in-out;
+  }
 }
 
 @keyframes slideLeft {
-  100% { right: 0; }
+  0% { transform: translateX(-600px); }
+  100% { transform: 0; }
 }
-.slide-left {
-  animation: slideLeft 200ms 1 0ms ease-in-out;
+.slide-left-appear {
+  animation: 0;
+  .slide-left-appear-active {
+    animation: slideLeft 200ms 1 0ms ease-in-out;
+  }
 }
