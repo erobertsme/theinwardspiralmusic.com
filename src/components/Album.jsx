@@ -26,14 +26,19 @@ const retailers = [
     name: 'soundcloud',
     label: 'Listen on Soundcloud',
     url: 'https://soundcloud.com/dave-gammage'
+  },
+  {
+    name: 'bandcamp',
+    label: 'Listen on BandCamp',
+    url: 'https://theinwardspiral.bandcamp.com/'
   }
-]
+];
 
 const outputRetailers = () => {
   return retailers.map((retailer, index) => (
-    <a href={ retailer.url } alt={ retailer.label } aria-label={ retailer.label } key={ index }><FontAwesomeIcon icon={['fab', retailer.name ]} /></a>
+    <a href={ retailer.url } title={ retailer.label } aria-label={ retailer.label } key={ index }><FontAwesomeIcon icon={['fab', retailer.name ]} /></a>
   ));
-}
+};
 
 const Album = () => {
   return (
@@ -49,6 +54,6 @@ const Album = () => {
       </div>
     </div>
   )
-}
+};
 
 export default Album
