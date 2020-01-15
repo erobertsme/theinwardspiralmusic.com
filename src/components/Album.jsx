@@ -36,7 +36,7 @@ const retailers = [
 
 const outputRetailers = () => {
   return retailers.map((retailer, index) => (
-    <a href={ retailer.url } title={ retailer.label } aria-label={ retailer.label } key={ index }><FontAwesomeIcon icon={['fab', retailer.name ]} /></a>
+    <a href={ retailer.url } title={ retailer.label } aria-label={ retailer.label } key={ index }><FontAwesomeIcon icon={['fab', retailer.name ]} target={"_blank"}/></a>
   ));
 };
 

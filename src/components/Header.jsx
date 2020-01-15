@@ -7,13 +7,13 @@ const socials = [
   { name:'instagram', url:'https://www.instagram.com/theinwardspiral/' },
   { name:'twitter', url:'https://twitter.com/spiral_inward' },
   { name:'youtube', url:'https://www.youtube.com/channel/UC_yZofN6BM5xsoHaVxQ-QFQ' }
-]
+];
 
 const outputSocials = () => {
   return socials.map((social, index) => (
-    <a href={ social.url } alt={ social.name + ' link' } aria-label={ social.name + ' link' }  key={ index }><div className="social-icon"><FontAwesomeIcon icon={[ 'fab', social.name ]} size="2x" /></div></a>
+    <a href={ social.url } title={ social.name + ' link' } target={"_blank"} aria-label={ social.name + ' link' } key={ index }><div className="social-icon"><FontAwesomeIcon icon={[ 'fab', social.name ]} size="2x" /></div></a>
   ))
-}
+};
 
 const Header = () => {
   return (
@@ -28,6 +28,6 @@ const Header = () => {
       </div>
     </header>
   )
-}
+};
 
 export default Header
