@@ -1,6 +1,6 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import HeaderImage from '../assets/images/JULYEP_xsm.png'
+import HeaderImage from '../assets/images/artist_portrait.png'
 
 const socials = [
   { name:'facebook-f', url:'https://facebook.com/theinwardspiral' },
