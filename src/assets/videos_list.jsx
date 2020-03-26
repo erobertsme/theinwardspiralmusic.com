@@ -1,4 +1,4 @@
-const videos = [
+const videos_list = [
   'https://www.youtube.com/watch?v=_6B6ml-1HxA',
   'https://www.youtube.com/watch?v=rWLWPjhraZU',
   'https://www.youtube.com/watch?v=IZGiYUPA3w4',
@@ -14,6 +14,6 @@ const videos = [
   'https://www.youtube.com/watch?v=oe339BsRsuk',
   'https://www.youtube.com/watch?v=RK7W6ZueYic',
   'https://www.youtube.com/watch?v=ebrBdWJ83k4',
-]
+];
 
-export default videos
+export default videos_list

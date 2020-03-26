@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import videos from '../assets/videos'
+import videos_list from '../assets/videos_list'
 import Slider from 'react-slick'
 
 export default class Video extends Component {
@@ -16,7 +16,7 @@ export default class Video extends Component {
   };
 
   generateVideos = () => { 
-    return videos.map((video, index) => {
+    return videos_list.map((video, index) => {
       return this.createThumbnail(video, index)
     })
   };

@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import videos from '../assets/videos'
+import videos_list from '../assets/videos_list'
 
 export default class Video extends Component {
   state = {  
-    lastIndex: videos.length -1,
+    lastIndex: videos_list.length -1,
     currentIndex: 0,
     showVideo: false,
   }
@@ -34,7 +34,7 @@ export default class Video extends Component {
   }
   
   getVideo = () => {
-    return videos[this.state.currentIndex].split('v=')[1]
+    return videos_list[this.state.currentIndex].split('v=')[1]
   }
 
   loadVideo = () => {

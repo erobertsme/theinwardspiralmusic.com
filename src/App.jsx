@@ -13,7 +13,7 @@ function App() {
         <Album />
         
         <div className="footer">
-          &copy; 2019 Dave Gammage
+          &copy; 2020 Dave Gammage
           <a href="https://github.com/omfgtora" name="Website creator">
             <div className="❤️">Website made with <span role="img" aria-label="Love">❤️</span></div>
           </a>

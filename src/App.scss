@@ -1,10 +1,7 @@
 html,
 body {
   font-family: sans-serif;
-  background-image: url('./assets/images/banner.png');
-  background-repeat: no-repeat;
-  background-color: black;
-
+  background: no-repeat center/cover url('./assets/images/bg-header.jpg');
   #root {
     display: grid;
     height: 100%;
@@ -177,9 +174,6 @@ div.embed-link:hover svg {
   display: none;
 }
 
-@-ms-viewport {
-  width: device-width;
-}
 
 @font-face {
   font-family: 'dtjakobvariableconceptgx';
@@ -391,7 +385,7 @@ div.embed-link:hover svg {
 /* ----------Animations------------- */
 @keyframes slideRight {
   0% { transform: translateX(600px); }
-  100% { transform: 0; }
+  100% { transform: none; }
 }
 .slide-right-appear {
   animation: 0;
@@ -402,7 +396,7 @@ div.embed-link:hover svg {
 
 @keyframes slideLeft {
   0% { transform: translateX(-600px); }
-  100% { transform: 0; }
+  100% { transform: none; }
 }
 .slide-left-appear {
   animation: 0;
