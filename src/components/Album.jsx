@@ -25,7 +25,7 @@ const retailers = [
   { 
     name: 'soundcloud',
     label: 'Listen on Soundcloud',
-    url: 'https://soundcloud.com/dave-gammage'
+    url: 'https://soundcloud.com/theinwardspiral'
   },
   {
     name: 'bandcamp',
@@ -45,8 +45,8 @@ const Album = () => {
     <div className="buy-now">
       <div className="tagline">
         New Album
-        <div className="album">Strange Comfort</div>
-        Releasing on January 3rd 2020
+        <div className="album">Between Faces</div>
+        Releasing on October 2nd 2020
       </div>
 
       <div className="links">
